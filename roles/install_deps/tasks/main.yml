@@ -1,0 +1,41 @@
+---
+
+- name: install SCL (software collections)
+  yum:
+    name: centos-release-scl
+    state: present
+
+- name: install git
+  yum:
+    name: git
+    state: present
+
+# expVIP docs asks for ruby22 but it is not possible to install rails with this.
+# ERROR:  Error installing rails:
+#         nokogiri requires Ruby version >= 2.3.0.
+
+- name: install ruby23
+  yum:
+    name: [rh-ruby23, rh-ruby23-ruby-devel]
+    state: present
+
+- name: install nodejs
+  yum:
+    name: rh-nodejs6
+    state: present
+
+- name: install mysql
+  yum:
+    name: [mysql55, mysql55-mysql-devel]
+    state: present
+
+- name: install mongodb
+  yum:
+    name: rh-mongodb34
+    state: present
+
+- name: install rails
+  shell: |
+    scl enable rh-ruby23 -- gem install -v 4.2.1 rails
+  args:
+    creates: /opt/rh/rh-ruby23/root/usr/local/bin/rails
