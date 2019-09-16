@@ -26,7 +26,14 @@
 
 - name: install mysql
   yum:
-    name: [mysql55, mysql55-mysql-devel]
+    name: [mariadb, mariadb-devel]
+    state: present
+
+# expVIP docs do not ask for sqlite-devel package, but it is required.
+
+- name: install sqlite-devel
+  yum:
+    name: sqlite-devel
     state: present
 
 - name: install mongodb
