@@ -7,3 +7,4 @@
   roles:
 
     - install_deps
+    - install_expvip

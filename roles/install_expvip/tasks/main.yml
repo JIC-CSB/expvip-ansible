@@ -1,0 +1,37 @@
+---
+
+- name: create the expvip group
+  group:
+    name: expvip
+    state: present
+    gid: 1001
+
+- name: add expvip user
+  user:
+    name: expvip
+    group: expvip
+    uid: 1001
+
+- name: clone the expvip git repo
+  git:
+    repo: https://github.com/Uauy-Lab/expvip-web.git
+    dest: /home/expvip/expvip_web 
+  become: yes
+  become_user: expvip
+
+- name: run npm install  
+  shell: |
+    scl enable rh-nodejs6 -- npm install
+  args:
+    creates: /home/expvip/expvip_web/node_modules/bio-vis-expression-bar/index.js
+    chdir: /home/expvip/expvip_web
+  become: yes
+  become_user: expvip
+
+- name: run bundle install
+  shell: |
+    scl enable rh-ruby23 -- bundle install
+  args:
+    chdir: /home/expvip/expvip_web
+  become: yes
+  become_user: expvip
