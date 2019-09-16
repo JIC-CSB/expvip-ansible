@@ -32,6 +32,7 @@
   shell: |
     scl enable rh-ruby23 -- bundle install
   args:
+    creates: /home/expvip/.gem/ruby/bin/sequenceserver
     chdir: /home/expvip/expvip_web
   become: yes
   become_user: expvip
