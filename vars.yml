@@ -1,0 +1,5 @@
+---
+
+mysql_user: mysql_user
+mysql_database: expvip
+mysql_root_password: mysql_root_password

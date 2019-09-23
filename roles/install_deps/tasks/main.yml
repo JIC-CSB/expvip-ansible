@@ -26,7 +26,12 @@
 
 - name: install mysql
   yum:
-    name: [mariadb, mariadb-devel]
+    name: [mariadb, mariadb-devel, mariadb-server]
+    state: present
+
+- name: install MySQL-python
+  yum:
+    name: MySQL-python
     state: present
 
 # expVIP docs do not ask for sqlite-devel package, but it is required.
@@ -41,8 +46,9 @@
     name: rh-mongodb34
     state: present
 
-- name: install rails
+- name: install bundler
   shell: |
-    scl enable rh-ruby23 -- gem install -v 4.2.1 rails
+    scl enable rh-ruby23 -- gem install bundler
   args:
-    creates: /opt/rh/rh-ruby23/root/usr/local/bin/rails
+    creates: /opt/rh/rh-ruby23/root/usr/local/bin/bundle
+

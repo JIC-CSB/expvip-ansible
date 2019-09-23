@@ -6,5 +6,6 @@
 
   roles:
 
-    - install_deps
-    - install_expvip
+     - install_deps
+     - install_expvip
+     - mysql_setup
