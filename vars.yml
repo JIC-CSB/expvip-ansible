@@ -1,5 +1,6 @@
 ---
 
-mysql_user: mysql_user
-mysql_database: expvip
 mysql_root_password: mysql_root_password
+mysql_expvip_user: expvipUSR
+mysql_expvip_user_password: expvipPWD
+mysql_expvip_database: expvip
