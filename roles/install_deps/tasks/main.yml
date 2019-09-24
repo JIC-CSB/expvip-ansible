@@ -10,6 +10,11 @@
     name: epel-release
     state: present
 
+- name: install the 'Development tools' package group
+  yum:
+    name: "@Development tools"
+    state: present
+
 - name: install git
   yum:
     name: git
