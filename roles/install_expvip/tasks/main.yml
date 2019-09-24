@@ -21,8 +21,7 @@
   ignore_errors: yes
 
 - name: run npm install  
-  shell: |
-    scl enable rh-nodejs6 -- npm install
+  command: npm install
   args:
     creates: /home/expvip/expvip_web/node_modules/bio-vis-expression-bar/index.js
     chdir: /home/expvip/expvip_web
