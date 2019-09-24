@@ -18,6 +18,7 @@
     dest: /home/expvip/expvip_web 
   become: yes
   become_user: expvip
+  ignore_errors: yes
 
 - name: run npm install  
   shell: |

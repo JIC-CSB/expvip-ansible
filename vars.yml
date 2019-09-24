@@ -1,6 +1,10 @@
 ---
 
 mysql_root_password: mysql_root_password
-mysql_expvip_user: expvipUSR
-mysql_expvip_user_password: expvipPWD
+mysql_db_user: expvip_db_user
+mysql_db_user_password: expvip_db_user_password
 mysql_expvip_database: expvip
+mysql_dev_db_name: dev
+mysql_test_db_name: test
+mysql_prod_db_name: prod
+mysql_db_prefix: expvip_

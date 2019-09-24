@@ -51,4 +51,3 @@
     scl enable rh-ruby23 -- gem install bundler
   args:
     creates: /opt/rh/rh-ruby23/root/usr/local/bin/bundle
-

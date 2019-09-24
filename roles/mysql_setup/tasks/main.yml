@@ -30,12 +30,21 @@
 
 - name: create expvip database
   mysql_db:
-    name: "{{ mysql_expvip_database }}"
+    name: "{{ item }}"
     state: present
+  with_items:
+    - "{{ mysql_db_prefix}}{{ mysql_dev_db_name }}"
+    - "{{ mysql_db_prefix}}{{ mysql_test_db_name }}"
+    - "{{ mysql_db_prefix}}{{ mysql_prod_db_name }}"
 
-- name: create mysql expvip user
+- name: give mysql db user access to expvip dbs
   mysql_user:
-    name: "{{ mysql_expvip_user }}"
+    name: "{{ mysql_db_user }}"
     host: "localhost"
-    password: "{{ mysql_expvip_user_password }}"
-    priv: "{{ mysql_expvip_database }}.*:ALL,GRANT"
+    password: "{{ mysql_db_user_password }}"
+    priv: "{{ mysql_db_prefix }}%.*:ALL,GRANT"
+
+- name: update the config/database.yml file
+  template:
+    src: webapp_config.yml
+    dest: "/home/expvip/expvip_web/config/database.yml"
