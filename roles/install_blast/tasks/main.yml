@@ -1,0 +1,17 @@
+---
+
+- name: create /opt/blast directory
+  file:
+    path: /opt/blast
+    state: directory
+
+- name: get blast+ rpm package
+  get_url:
+    url: ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.9.0/ncbi-blast-2.9.0+-1.x86_64.rpm
+    dest: /opt/blast/ncbi-blast-2.9.0+-1.x86_64.rpm
+    checksum: md5:c7226d9dd8b213ffa9ca304ff34df9a2
+
+- name: install blast
+  yum:
+    name: /opt/blast/ncbi-blast-2.9.0+-1.x86_64.rpm
+    state: present
