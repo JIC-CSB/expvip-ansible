@@ -56,11 +56,6 @@
     name: sqlite-devel
     state: present
 
-- name: install mongodb
-  yum:
-    name: rh-mongodb34
-    state: present
-
 - name: install bundler
   shell: |
     scl enable rh-ruby23 -- gem install bundler
