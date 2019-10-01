@@ -36,3 +36,10 @@
     chdir: /home/expvip/expvip_web
   become: yes
   become_user: expvip
+
+- name: copy over activate.sh script
+  copy:
+    src: activate.sh
+    dest: /home/expvip/activate.sh
+  become: yes
+  become_user: expvip

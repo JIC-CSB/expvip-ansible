@@ -13,3 +13,10 @@ Create development VM using Vagrant::
 Provision the VM using Ansible::
 
     ansible-playbook -i hosts playbook.yml
+
+Login and setup PATHS::
+
+    vagrant ssh
+    sudo expvip
+    cd
+    source activate.sh
