@@ -1,2 +1,2 @@
 PATH=~/bin:$PATH
-scl enable rh-ruby23 --
+scl enable rh-ruby23 bash
