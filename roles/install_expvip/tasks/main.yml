@@ -43,3 +43,10 @@
     dest: /home/expvip/activate.sh
   become: yes
   become_user: expvip
+
+- name: copy over sequenceserver conf file
+  copy:
+    src: sequenceserver.conf
+    dest: /home/expvip/.sequenceserver.conf
+  become: yes
+  become_user: expvip
