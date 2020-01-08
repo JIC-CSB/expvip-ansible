@@ -20,3 +20,8 @@ Login and setup PATHS::
     sudo expvip
     cd
     source activate.sh
+
+Start the server::
+
+    cd expvip_web
+    bash start_unicorn.sh
