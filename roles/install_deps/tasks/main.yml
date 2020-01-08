@@ -67,3 +67,9 @@
     scl enable rh-ruby23 -- gem install sequenceserver
   args:
     creates: /opt/rh/rh-ruby23/root/usr/local/bin/sequenceserver
+
+- name: install unicorn
+  shell: |
+    scl enable rh-ruby23 -- gem install unicorn
+  args:
+    creates: /opt/rh/rh-ruby23/root/usr/local/bin/unicorn
