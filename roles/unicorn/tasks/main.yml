@@ -1,0 +1,33 @@
+---
+
+- name: create /var/run/unicorn
+  file:
+    path: "{{ unicorn_directory }}"
+    state: directory
+    mode: '0755'
+    owner: expvip
+    group: expvip
+
+- name: create pids sockets log unicorn dirs
+  file:
+    path: "{{ unicorn_directory }}/{{ item }}"
+    state: directory
+    mode: '0755'
+    owner: expvip
+    group: expvip
+  with_items:
+    - pids
+    - sockets
+    - logs
+
+- name: copy over unicorn.rb
+  template:
+    src: unicorn.rb
+    dest: "{{ app_dir }}/config/unicorn.rb"
+
+- name: copy over start_unicorn.sh
+  template:
+    src: start_unicorn.sh
+    dest: "/home/expvip/start_unicorn.sh"
+    owner: expvip
+    group: expvip
