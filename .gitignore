@@ -1,5 +1,7 @@
 *.swp
 *.retry
 
+vars.yml
+
 sample_data
 .vagrant
