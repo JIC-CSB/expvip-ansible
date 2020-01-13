@@ -1,5 +1,6 @@
 ---
 
+expvip_github_repo: https://github.com/Uauy-Lab/expvip-web.git
 mysql_root_password: mysql_root_password
 mysql_db_user: expvip_db_user
 mysql_db_user_password: expvip_db_user_password

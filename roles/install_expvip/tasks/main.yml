@@ -14,7 +14,7 @@
 
 - name: clone the expvip git repo
   git:
-    repo: https://github.com/Uauy-Lab/expvip-web.git
+    repo: "{{ expvip_github_repo }}"
     dest: "{{ app_dir }}" 
   become: yes
   become_user: expvip
