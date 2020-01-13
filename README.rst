@@ -10,6 +10,12 @@ Create development VM using Vagrant::
 
     vagrant up
 
+Create a vars.yml file::
+
+   cp vars-template.yml vars.yml
+
+Update the vars.yml. 
+
 Provision the VM using Ansible::
 
     ansible-playbook -i hosts playbook.yml
