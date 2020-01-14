@@ -14,8 +14,9 @@
 
 - name: clone the expvip git repo
   git:
-    repo: "{{ expvip_github_repo }}"
+    repo: "{{ expvip_git_repo }}"
     dest: "{{ app_dir }}" 
+    version: "{{ expvip_git_branch }}"
   become: yes
   become_user: expvip
   ignore_errors: yes
