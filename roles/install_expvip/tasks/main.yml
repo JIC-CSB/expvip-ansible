@@ -51,3 +51,11 @@
     dest: /home/expvip/.sequenceserver.conf
   become: yes
   become_user: expvip
+
+- name: ensure that the blast db directory exists
+  file:
+    path: "{{ blast_directory }}"
+    state: directory
+    mode: '0755'
+  become: yes
+  become_user: expvip
