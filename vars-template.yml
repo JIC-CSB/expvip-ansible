@@ -12,3 +12,4 @@ mysql_prod_db_name: prod
 mysql_db_prefix: expvip_
 app_dir: /home/expvip/expvip_web
 unicorn_directory: /var/run/unicorn
+blast_directory: /home/expvip/data
