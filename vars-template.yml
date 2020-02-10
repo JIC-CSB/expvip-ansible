@@ -13,3 +13,7 @@ mysql_db_prefix: expvip_
 app_dir: /home/expvip/expvip_web
 unicorn_directory: /var/run/unicorn
 blast_directory: /home/expvip/data
+
+# Firewalld config.
+FIREWALLD_ALLOWED_SERVICES: [http, https]
+FIREWALLD_ALLOWED_PORTS: []
